@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <fieldset>
+    <form action="/login" method="POST">
+      
+        <!-- <form action="#" onsubmit="return validation()"> -->
+            <div class="form-group">
+    <label>
+        Name:
+    </label>
+    <input type="text" name="username" placeholder="Enter Name" pattern="[A-Z a-z]{6,12}" title="At least 8 characters" id="name" > <br>
+<span id="usernames" class="text-danger font-weight-bold"></span>
+</div>
+  
+<br>
+
+    <div class="form-group">
+    <label>
+        Email:
+    </label>
+    <input type="email" name="email" placeholder="Enter email"  title="Must be in mail format" id="mail" > <br>
+    <span id="emails" class="text-danger font-weight-bold"></span>
+</div>
+<br>
+<div class="form-group">
+    <label>
+        Password:
+    </label> 
+    <input type="password" name="pass" placeholder="Enter Password" pattern="[A-Z a-z]{6,12}" id="passwd" > <br>
+    <span id="passwords" class="text-danger font-weight-bold"></span>
+</div>
+<br>
+<div class="form-group">
+    <label>
+        Confirm Password:
+    </label>
+    <input type="password" name="cnfrmpass" placeholder="Confirm Password" pattern="[A-Z a-z]{6,12}" id="cnpasswd" > <br>
+    <span id="confirmpasswords" class="text-danger font-weight-bold"></span>
+</div>
+<br>
+    <button type="submit" name="submit">Add</button>
+    
+    <button type="reset" name="reset">Reset</button>
+
+    <button type="button" name="submit">Edit</button>
+    
+<!-- </form> -->
+
+</form>
+</fieldset>
+
+</body>
+</html>
