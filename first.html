@@ -1,62 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+
+    <head>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+                <title>Login Form</form></title>
+
+                <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+
+            </head>
+
 <body>
-
-    <fieldset>
-    <form action="/login" method="POST">
-      
-        <!-- <form action="#" onsubmit="return validation()"> -->
-            <div class="form-group">
-    <label>
-        Name:
-    </label>
-    <input type="text" name="username" placeholder="Enter Name" pattern="[A-Z a-z]{6,12}" title="At least 8 characters" id="name" > <br>
-<span id="usernames" class="text-danger font-weight-bold"></span>
-</div>
-  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <br>
+        <button id="add-user" class="btn btn-primary" onclick="showAddUser()">User Login</button>
+        <button id="view-user" class="btn btn-primary" onclick="showUsers()">User Details</button><br>
+   
 <br>
-
-    <div class="form-group">
-    <label>
-        Email:
-    </label>
-    <input type="email" name="email" placeholder="Enter email"  title="Must be in mail format" id="mail" > <br>
-    <span id="emails" class="text-danger font-weight-bold"></span>
-</div>
-<br>
-<div class="form-group">
-    <label>
-        Password:
-    </label> 
-    <input type="password" name="pass" placeholder="Enter Password" pattern="[A-Z a-z]{6,12}" id="passwd" > <br>
-    <span id="passwords" class="text-danger font-weight-bold"></span>
-</div>
-<br>
-<div class="form-group">
-    <label>
-        Confirm Password:
-    </label>
-    <input type="password" name="cnfrmpass" placeholder="Confirm Password" pattern="[A-Z a-z]{6,12}" id="cnpasswd" > <br>
-    <span id="confirmpasswords" class="text-danger font-weight-bold"></span>
-</div>
-<br>
-    <button type="submit" name="submit">Add</button>
-    
-    <button type="reset" name="reset">Reset</button>
-
-    <button type="button" name="submit">Edit</button>
-    
-<!-- </form> -->
-
-</form>
+    <h2 style="display: none" id="user-added">Login successfull</h2>
+    <fieldset id="user-form">
+        <label>Add New User Login:</label> <br>
+        <br>
+        <form onsubmit="return false;" method="POST" id="myForm">
+            <label for="uname">User Name:</label> <input type="text" name="name" placeholder="Enter Name" id="username"><br>
+            <br>
+            <label for="email">Email:</label> <input type="email" name="email" placeholder="Enter Email" id="email"><br>
+            <br>
+            <label for="pwd">Password:</label> <input type="password" name="pwd" placeholder="Enter Password" id="pass"><br>
+            <br>
+            <label for="cpwd">Confirm Password:</label> <input type="password" name="cpwd" placeholder="Re enter Password" id="cnfrmpwd"><br>
+            <br>
+            <input type="submit" class="btn btn-primary"  id="submit" onclick="addUser();" value="ADD"  />
+            
+            <input type="hidden" id="uid" value=""> 
+            
+            <button type="reset" class="btn btn-primary" name="reset">Reset</button>
+        </form>
 </fieldset>
 
+<fieldset id="users" style="display: none;">
+        <legend>Add User:</legend>
+        <table id="users">
+            <tr>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Email Id</th>
+                <th>Password</th>
+            </tr>
+        </table>
+    </fieldset>
+    <script src="app.js"></script>
 </body>
+
 </html>
